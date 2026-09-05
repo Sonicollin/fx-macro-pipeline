@@ -1,0 +1,11 @@
+# Ignore raw data files
+data/raw/*
+
+# But keep tracking the directory via gitkeep
+!data/raw/.gitkeep
+
+# Python specific ignores
+__pycache__/
+*.pyc
+.venv/
+.poetry/
