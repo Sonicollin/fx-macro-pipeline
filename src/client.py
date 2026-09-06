@@ -75,4 +75,4 @@ if __name__ == "__main__":
         )
         print("✅ Success!")
         print(f"Base: {data.base}")
-        print(f"Fetched {len(data.rates)} days of rate data.")
+        print(f"Fetched {len(data.rates)} days of rate data.")+
