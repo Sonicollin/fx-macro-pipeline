@@ -1,0 +1,20 @@
+[project]
+name = "fx-macro-pipeline"
+version = "0.1.0"
+description = "A modular, high-performance ETL pipeline built with Python 3.12, Polars, Pydantic v2, and Parquet for automated financial data ingestion and metric aggregation."
+authors = [
+    {name = "Sonicollin",email = "sonicollin98@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "httpx (>=0.28.1,<0.29.0)",
+    "pydantic (>=2.13.5,<3.0.0)",
+    "polars (>=1.44.1,<2.0.0)",
+    "pyarrow (>=25.0.1,<26.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
