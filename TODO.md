@@ -18,12 +18,12 @@
 
 ## 🌐 Phase 2: Production-Grade API Client (`src/client.py`)
 - [ ] **Implement `FXApiClient` Class**
-  - [ ] Encapsulate `httpx` requests with configurable base URL, timeout, and retry logic
-  - [ ] Implement robust error handling (`httpx.RequestError`, HTTP status codes)
-  - [ ] Integrate `FXApiResponse` Pydantic model into client return type
-- [ ] **Write Unit Tests for API Client** (`tests/test_client.py`)
-  - [ ] Test successful fetching with mocked responses
-  - [ ] Test client handling of non-200 responses and connection failures
+  - [x] Encapsulate `httpx` requests with configurable base URL, timeout, and retry logic
+  - [x] Implement robust error handling (`httpx.RequestError`, HTTP status codes)
+  - [x] Integrate `FXApiResponse` Pydantic model into client return type
+- [x] **Write Unit Tests for API Client** (`tests/test_client.py`)
+  - [x] Test successful fetching with mocked responses
+  - [x] Test client handling of non-200 responses and connection failures
 
 ---
 
