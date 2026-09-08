@@ -1,11 +1,18 @@
-# Ignore raw data files
+# Data Directories (Exclude generated parquet files, keep structure)
 data/raw/*
-
-# But keep tracking the directory via gitkeep
+data/processed/*
 !data/raw/.gitkeep
+!data/processed/.gitkeep
 
-# Python specific ignores
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+
+# Byte-compiled / optimized files
 __pycache__/
 *.pyc
+
+# Virtual Environments
 .venv/
-.poetry/
+venv/
+env/

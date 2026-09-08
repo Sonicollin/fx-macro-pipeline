@@ -38,18 +38,27 @@
 ---
 
 ## 💾 Phase 4: Storage & CLI Driver (`src/config.py`, `main.py`)
-- [ ] **Configuration Engine** (`src/config.py`)
-  - [ ] Manage directory paths (`data/raw/`, `data/processed/`) and environment variables
-- [ ] **Parquet Storage Engine**
-  - [ ] Save processed Polars DataFrames as partitioned Parquet files (`partition_by=['base_currency', 'year']`)
-- [ ] **CLI Entrypoint** (`main.py`)
-  - [ ] Wire together API Client, Transformer, and Storage Engine into an end-to-end executable pipeline
+- [x] **Implement Central Configuration** (`src/config.py`)
+  - [x] Set up environment-agnostic filesystem paths using `pathlib`
+  - [x] Configure automatic directory creation (`data/raw/`, `data/processed/`)
+- [x] **Implement Parquet Storage Engine**
+  - [x] Write Polars DataFrames to Parquet format using `PyArrow`
+  - [x] Support hierarchical, multi-level Hive partitioning (`base_currency` -> `target_currency`)
+- [x] **Write Storage Unit Tests** (`tests/test_storage.py`)
+  - [x] Verify single=file and partitioned Parquet writes using `pytest` and `tmp_path` fixtures
+- [x] **Built CLI Pipeline Orchestrator** (`main.py`)
+  - [x] Configure `argeparse` CLI options for date ranges, base currencies, target symbols, and storage           partitioning
+  - [x] Wire end-to-end flow: Extraction (`FXApiClient`) -> Transformation (`FXTransformer`) -> Load/Store    (`ParquetStorageEngine`)
 
 ---
 
-## 📄 Phase 5: Documentation & Final Polish
-- [ ] **Documentation (`README.md`)**
-  - [ ] Architecture diagram & overview
-  - [ ] Setup & execution guide using Poetry
-- [ ] **Integration Testing**
-  - [ ] Execute full pipeline test run from CLI to Parquet output
+## 📑 Phase 5: Documentation & Final Polish
+- [x] **Project Hygiene & Code Quality**
+  - [x] Add clear type annotations and docstrings across all modules
+  - [x] Ensure test suite coverage across ingestion, transformation, and storage
+- [x] **Environment & Dependency Management**
+  - [x] Freeze environment dependencies into `requirements.txt`
+  - [x] Provide clean, reproducible setup instructions
+- [x] **Portfolio README & Architecture Documentation**
+  - [x] Write a comprehensive `README.md` with architecture diagrams and CLI usage
+  - [x] Add `.gitignore` safety rules
