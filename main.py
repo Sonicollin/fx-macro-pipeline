@@ -92,7 +92,7 @@ def run_pipeline(
     storage = ParquetStorageEngine(output_dir=PROCESSED_DATA_DIR)
 
     if partition:
-        saved_path = storage.save_dataframe(df, partition_by=["target_currency"])
+        saved_path = storage.save_dataframe(df, partition_by=["base_currency", "target_currency"])
         print(f"  ✓ Saved partitioned dataset to directory: {saved_path}")
     else:
         filename = f"fx_{base_currency.lower()}_{start_date}_to_{end_date}.parquet"
