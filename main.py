@@ -16,8 +16,9 @@ from storage import ParquetStorageEngine
 
 def parse_args() -> argparse.Namespace:
     """Parses command-line arguments for the FX macro pipeline."""
-    today = date.today()
-    default_start = today - timedelta(days=30)
+    # Default date values
+    today = date.today() # --> Default end date
+    default_start = today - timedelta(days=30) # --> Default start date 30 days ago
 
     parser = argparse.ArgumentParser(
         description="FX Macro Data Pipeline: Fetch, transform, and store exchange rate data."
@@ -49,7 +50,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--partition",
         action="store_true",
-        help="Partition Parquet output directory by base currency.",
+        help="Partition Parquet output directory by target currency.",
     )
     return parser.parse_args()
 
@@ -91,7 +92,7 @@ def run_pipeline(
     storage = ParquetStorageEngine(output_dir=PROCESSED_DATA_DIR)
 
     if partition:
-        saved_path = storage.save_dataframe(df, partition_by=["base_currency"])
+        saved_path = storage.save_dataframe(df, partition_by=["target_currency"])
         print(f"  ✓ Saved partitioned dataset to directory: {saved_path}")
     else:
         filename = f"fx_{base_currency.lower()}_{start_date}_to_{end_date}.parquet"
