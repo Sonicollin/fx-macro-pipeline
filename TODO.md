@@ -29,11 +29,11 @@
 
 ## ⚡ Phase 3: Polars ETL & Vectorized Transformations (`src/transformer.py`)
 - [ ] **Implement `FXTransformer` Class**
-  - [ ] Convert validated Pydantic models into flat Polars DataFrames
-  - [ ] Unnest and reshape nested `rates` dictionary into tabular schema (`date`, `base_currency`, `target_currency`, `exchange_rate`)
-  - [ ] Compute rolling aggregations (7-day & 30-day moving averages, percentage changes)
-- [ ] **Write Unit Tests for Transformer** (`tests/test_transformer.py`)
-  - [ ] Verify schema correctness, null handling, and rolling calculations
+  - [x] Convert validated Pydantic models into flat Polars DataFrames
+  - [x] Unnest and reshape nested `rates` dictionary into tabular schema (`date`, `base_currency`, `target_currency`, `exchange_rate`)
+  - [x] Compute rolling aggregations (7-day & 30-day moving averages, percentage changes)
+- [x] **Write Unit Tests for Transformer** (`tests/test_transformer.py`)
+  - [x] Verify schema correctness, null handling, and rolling calculations
 
 ---
 
