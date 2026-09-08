@@ -30,21 +30,21 @@ A simple macroeconomic data pipeline built in Python. Fetches foreign exchange r
 ## Quick Start
 
 1. Installation
--- Bash --
+```Bash
 git clone [https://github.com/Sonicollin/fx-macro-pipeline.git](https://github.com/Sonicollin/fx-macro-pipeline.git)
 cd fx-macro-pipeline
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 2. Run Pipeline
--- Bash --
+```Bash
 *Run with default 30-day window*
 python main.py
 
 *Custom date range with multi-level partitioning*
 python main.py --start-date 2026-01-01 --end-date 2026-03-01 --base USD --symbols EUR JPY GBP --partition
-
+```
 ## Tech Stack
 
 * Language: Python 3.12+
