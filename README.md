@@ -17,17 +17,18 @@ A simple macroeconomic data pipeline built in Python. Fetches foreign exchange r
                                                                                 └── data.parquet
 ```
 
-### Key Features
+## Key Features
 
-Robust Ingestion: Async/sync httpx client wrapped with Pydantic runtime schema validation.
+- Robust Ingestion: Async/sync httpx client wrapped with Pydantic runtime schema validation.
 
-High-Performance ETL: Polars vectorized transformations computing daily % change and 7/30-day rolling averages.
+- High-Performance ETL: Polars vectorized transformations computing daily % change and 7/30-day rolling averages.
 
-Granular Storage: Hive-style multi-level directory partitioning (base_currency → target_currency) with PyArrow.
+- Granular Storage: Hive-style multi-level directory partitioning (base_currency → target_currency) with PyArrow.
 
-Path-Safe Execution: Dynamic path resolution via pathlib for cross-platform reliability.
+- Path-Safe Execution: Dynamic path resolution via pathlib for cross-platform reliability.
 
-#### Quick Start
+## Quick Start
+
 1. Installation
 -- Bash --
 git clone [https://github.com/Sonicollin/fx-macro-pipeline.git](https://github.com/Sonicollin/fx-macro-pipeline.git)
@@ -44,9 +45,10 @@ python main.py
 *Custom date range with multi-level partitioning*
 python main.py --start-date 2026-01-01 --end-date 2026-03-01 --base USD --symbols EUR JPY GBP --partition
 
-##### Tech Stack
-Language: Python 3.12+
-HTTP Client: httpx
-Data Validation: Pydantic v2
-Data Transformation and Storage: Polars & PyArrow
-Testing: pytest
+## Tech Stack
+
+* Language: Python 3.12+
+* HTTP Client: httpx
+* Data Validation: Pydantic v2
+* Data Transformation and Storage: Polars & PyArrow
+* Testing: pytest
